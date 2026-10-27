@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Политика конфиденциальности — KiteSense</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; line-height: 1.5; color: #222; }
-  h1 { border-bottom: 2px solid #ccc; padding-bottom: .3em; }
-  h2 { margin-top: 1.5em; }
-  .lang-switch { margin: 1em 0; }
-  .lang-switch button { padding: .4em 1em; margin-right: .5em; cursor: pointer; border: 1px solid #999; background: #f5f5f5; border-radius: 4px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #222; }
+  h1 { border-bottom: 2px solid #ccc; padding-bottom: .3em; font-size: 1.6em; }
+  h2 { margin-top: 1.8em; font-size: 1.2em; color: #111; }
+  ul { padding-left: 1.4em; }
+  li { margin: .3em 0; }
+  .lang-switch { margin: 1em 0 2em; }
+  .lang-switch button { padding: .4em 1em; margin-right: .5em; cursor: pointer; border: 1px solid #999; background: #f5f5f5; border-radius: 4px; font-size: 1em; }
   .lang-switch button.active { background: #0077cc; color: #fff; border-color: #0077cc; }
-  .updated { color: #666; font-size: .9em; }
+  .updated { color: #666; font-size: .9em; margin-top: -.5em; }
   a { color: #0077cc; }
   [hidden] { display: none !important; }
 </style>
@@ -27,14 +29,142 @@
 <div id="lang-ru">
 <h1>Политика конфиденциальности</h1>
 <p class="updated">Последнее обновление: 27 октября 2026 г.</p>
-<p><em>Текст политики будет вставлен следующим шагом (берётся из strings.xml, ключ privacy_body).</em></p>
+
+<h2>1. Оператор и контакты</h2>
+<p>Оператор персональных данных: физическое лицо, владелец приложения KiteSense. Контакт: support@kitesense.ru.</p>
+
+<h2>2. Какие данные мы собираем</h2>
+<ul>
+  <li>Email — для входа и подтверждения аккаунта.</li>
+  <li>Имя пользователя (username) — для отображения в приложении.</li>
+  <li>Уровень катания, вес, физическая форма — для расчёта рекомендаций.</li>
+  <li>Информация о снаряжении (кайты, доска) — для проверки снаряжения.</li>
+  <li>GPS-координаты (в том числе фоновая геолокация при записи сессии) — для карты спотов, присутствия и трекинга сессии.</li>
+  <li>Аватар — для отображения профиля.</li>
+  <li>Журнал сессий — для ведения истории и расчёта нагрузки (ACWR).</li>
+  <li>FCM-токен — для push-уведомлений.</li>
+  <li>Технические логи (обезличенные) — для диагностики ошибок, только с согласия.</li>
+</ul>
+
+<h2>3. Зачем мы это собираем</h2>
+<p>Все данные используются только для работы приложения KiteSense:</p>
+<ul>
+  <li>расчёт рекомендаций по снаряжению и риску;</li>
+  <li>отображение профиля и присутствия друзьям;</li>
+  <li>ведение журнала сессий;</li>
+  <li>push-уведомления о ветре и заявках в друзья.</li>
+</ul>
+
+<h2>4. Кому передаём (трансграничная передача)</h2>
+<ul>
+  <li>Supabase (ЕС) — база данных, аутентификация, файлы, Edge Function удаления аккаунта.</li>
+  <li>Open-Meteo — прогноз погоды и морские данные.</li>
+  <li>Firebase Cloud Messaging, Google (США) — push-уведомления.</li>
+  <li>Google Play Services Location (США) — геолокация на устройствах с Google-сервисами.</li>
+  <li>CloudTips (РФ) — приём добровольных пожертвований.</li>
+  <li>Haskimail — отправка email (подтверждение, сброс пароля).</li>
+</ul>
+<p>Мы не продаём и не передаём твои данные третьим лицам в рекламных целях.</p>
+
+<h2>5. Сроки хранения</h2>
+<ul>
+  <li>Данные аккаунта (email, профиль, сессии, аватар, друзья) — до удаления аккаунта.</li>
+  <li>FCM-токен — до выхода из аккаунта или удаления.</li>
+  <li>Технические логи — до 30 дней.</li>
+  <li>После удаления аккаунта данные удаляются безвозвратно.</li>
+</ul>
+
+<h2>6. Права пользователя</h2>
+<ul>
+  <li>Доступ к своим данным (профиль, сессии).</li>
+  <li>Исправление данных (редактирование профиля).</li>
+  <li>Удаление аккаунта и всех связанных данных (Настройки → Удалить аккаунт).</li>
+  <li>Отзыв согласия на геолокацию, push-уведомления, отчёты об ошибках (Настройки).</li>
+  <li>Жалоба в Роскомнадзор (rkn.gov.ru) или суд.</li>
+</ul>
+
+<h2>7. Геолокация</h2>
+<p>Доступ к геолокации запрашивается только при использовании функций карты, присутствия и трекинга сессии. Фоновая геолокация используется только во время записи сессии. Отказ в доступе не блокирует остальные функции (ручной выбор спота).</p>
+
+<h2>8. Возраст</h2>
+<p>Приложение не предназначено для лиц младше 18 лет. Для лиц 14–17 лет требуется согласие законного представителя.</p>
+
+<h2>9. Как удалить аккаунт</h2>
+<p>Настройки → Удалить аккаунт. Все данные (профиль, сессии, аватар, друзья, FCM-токен) будут удалены безвозвратно.</p>
+
+<h2>10. Контакты</h2>
+<p>По любым вопросам: support@kitesense.ru</p>
 </div>
 
 <!-- ================= EN ================= -->
 <div id="lang-en" hidden>
 <h1>Privacy Policy</h1>
 <p class="updated">Last updated: October 27, 2026</p>
-<p><em>The policy text will be inserted in the next step (from strings.xml, key privacy_body).</em></p>
+
+<h2>1. Operator and contacts</h2>
+<p>Data controller: individual, owner of the KiteSense app. Contact: support@kitesense.ru.</p>
+
+<h2>2. What data we collect</h2>
+<ul>
+  <li>Email — for login and account confirmation.</li>
+  <li>Username — for display in the app.</li>
+  <li>Riding level, weight, fitness — for calculating recommendations.</li>
+  <li>Gear information (kites, board) — for gear check.</li>
+  <li>GPS coordinates (including background location during session recording) — for the spot map, presence, and session tracking.</li>
+  <li>Avatar — for profile display.</li>
+  <li>Session log — for history and load calculation (ACWR).</li>
+  <li>FCM token — for push notifications.</li>
+  <li>Technical logs (anonymized) — for diagnostics, only with consent.</li>
+</ul>
+
+<h2>3. Why we collect it</h2>
+<p>All data is used only for the operation of KiteSense:</p>
+<ul>
+  <li>calculating gear and risk recommendations;</li>
+  <li>displaying your profile and presence to friends;</li>
+  <li>keeping a session log;</li>
+  <li>push notifications about wind and friend requests.</li>
+</ul>
+
+<h2>4. Who we share it with (cross-border transfer)</h2>
+<ul>
+  <li>Supabase (EU) — database, authentication, files, Edge Function for account deletion.</li>
+  <li>Open-Meteo — weather and marine data.</li>
+  <li>Firebase Cloud Messaging, Google (USA) — push notifications.</li>
+  <li>Google Play Services Location (USA) — location on devices with Google services.</li>
+  <li>CloudTips (Russia) — voluntary donations.</li>
+  <li>Haskimail — email sending (confirmation, password reset).</li>
+</ul>
+<p>We do not sell or share your data with third parties for advertising purposes.</p>
+
+<h2>5. Retention periods</h2>
+<ul>
+  <li>Account data (email, profile, sessions, avatar, friends) — until account deletion.</li>
+  <li>FCM token — until logout or deletion.</li>
+  <li>Technical logs — up to 30 days.</li>
+  <li>After account deletion, data is permanently deleted.</li>
+</ul>
+
+<h2>6. User rights</h2>
+<ul>
+  <li>Access to your data (profile, sessions).</li>
+  <li>Correction of data (profile editing).</li>
+  <li>Deletion of account and all related data (Settings → Delete account).</li>
+  <li>Withdrawal of consent for location, push notifications, crash reports (Settings).</li>
+  <li>Complaint to Roskomnadzor (rkn.gov.ru) or court.</li>
+</ul>
+
+<h2>7. Location</h2>
+<p>Location access is requested only when using map, presence, and session tracking features. Background location is used only during session recording. Denial of access does not block other features (manual spot selection).</p>
+
+<h2>8. Age</h2>
+<p>The app is not intended for persons under 18. For persons aged 14–17, consent of a legal representative is required.</p>
+
+<h2>9. How to delete your account</h2>
+<p>Settings → Delete account. All data (profile, sessions, avatar, friends, FCM token) will be permanently deleted.</p>
+
+<h2>10. Contacts</h2>
+<p>For any questions: support@kitesense.ru</p>
 </div>
 
 <script>
